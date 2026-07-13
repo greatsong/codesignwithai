@@ -102,8 +102,8 @@
   <p class="pick">우리 학교급의 AI 수업 설계 도우미를 선택하세요</p>
   <div class="grid">
 
-    <!-- 초등학교 · 링크 URL 넣기 -->
-    <a class="card" href="https://example.com/elementary" data-level="초">
+    <!-- 초등학교 -->
+    <a class="card" href="https://togethertr.web.app/" data-level="초">
       <div class="cover 초">
         <span class="cover-star">✳</span>
         <div class="cover-word">함께 만드는<br>수업<small>서로 깊어지는 배움</small></div>
@@ -118,8 +118,8 @@
       </div>
     </a>
 
-    <!-- 중학교 · 링크 URL 넣기 -->
-    <a class="card" href="https://example.com/middle" data-level="중">
+    <!-- 중학교 -->
+    <a class="card" href="https://teching-designer.vercel.app/" data-level="중">
       <div class="cover 중">
         <span class="cover-star">✳</span>
         <div class="cover-word">함께 만드는<br>수업<small>서로 깊어지는 배움</small></div>
@@ -168,11 +168,6 @@
       || (matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
     root.setAttribute('data-theme', cur==='dark'?'light':'dark');
   });
-  // 데모: 링크가 example.com이면 클릭 시 안내 (실제 URL로 교체하세요)
-  document.querySelectorAll('.card').forEach(a=>{
-    a.addEventListener('click',e=>{
-      if(a.href.includes('example.com')){ e.preventDefault();
-        alert('실제 '+a.dataset.level+'등학교 사이트 URL로 교체하면 이동합니다.'); }
-    });
-  });
+  // 각 학교급 사이트는 새 탭으로 열어 허브로 돌아오기 쉽게
+  document.querySelectorAll('.card').forEach(a=>{ a.target='_blank'; a.rel='noopener'; });
 </script>
