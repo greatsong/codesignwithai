@@ -42,7 +42,9 @@
   .eyebrow .dot:nth-child(3){background:var(--blue)}
   h1{font-size:clamp(34px,6.2vw,60px);font-weight:800;letter-spacing:-.02em;
     line-height:1.12;text-wrap:balance}
-  h1 .star{color:var(--amber);font-weight:400;font-size:.62em;vertical-align:top;margin-left:.1em}
+  h1 .star{color:var(--amber);font-weight:400;font-size:.62em;vertical-align:top;margin-left:.1em;
+    display:inline-block;transform-origin:center;animation:twinkle 4s ease-in-out infinite}
+  @keyframes twinkle{0%,100%{opacity:1;transform:scale(1) rotate(0deg)}50%{opacity:.72;transform:scale(1.14) rotate(22deg)}}
   .tagline{margin-top:18px;font-size:clamp(14px,2.2vw,17px);font-weight:500;color:var(--ink-soft);letter-spacing:.01em}
   .subline{margin-top:22px;display:inline-block;font-size:13.5px;font-weight:600;color:var(--ink);
     padding:8px 18px;border:1px solid var(--edge);border-radius:999px;background:var(--card)}
@@ -69,7 +71,14 @@
   .cover.초{background:linear-gradient(150deg,var(--pink),var(--pink-deep))}
   .cover.중{background:linear-gradient(150deg,var(--amber),var(--amber-deep))}
   .cover.고{background:linear-gradient(150deg,var(--blue),var(--blue-deep))}
-  .cover-star{position:absolute;top:18px;right:20px;font-size:26px;line-height:1;opacity:.9}
+  .cover-star{position:absolute;top:18px;right:20px;font-size:26px;line-height:1;opacity:.9;
+    transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+  .card:hover .cover-star{transform:rotate(90deg) scale(1.12)}
+  /* hover 시 표지 위로 은은한 빛이 한 번 스치는 효과 */
+  .cover::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.28) 50%,transparent 68%);
+    transform:translateX(-130%);transition:transform .8s ease}
+  .card:hover .cover::after{transform:translateX(130%)}
   .cover-word{font-size:clamp(23px,3vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.15;
     text-shadow:0 1px 12px rgba(0,0,0,.08)}
   .cover-word small{display:block;font-size:.62em;font-weight:600;opacity:.9;margin-top:2px}
@@ -94,7 +103,10 @@
   footer .org{font-weight:700;color:var(--ink)}
   .theme{position:fixed;top:16px;right:18px;z-index:9;background:var(--card);border:1px solid var(--edge);
     color:var(--ink);border-radius:999px;width:38px;height:38px;cursor:pointer;font-size:16px;box-shadow:var(--shadow)}
-  @media (prefers-reduced-motion:reduce){ .card{animation:none;opacity:1;transform:none} .card:hover{transform:none} }
+  @media (prefers-reduced-motion:reduce){
+    .card{animation:none;opacity:1;transform:none} .card:hover{transform:none}
+    h1 .star{animation:none} .cover::after{display:none} .card:hover .cover-star{transform:none}
+  }
 </style>
 </head>
 <body>
@@ -157,7 +169,7 @@
       <div class="body 고">
         <span class="lv"><span class="chip"></span>고등학교</span>
         <span class="name">고등학교</span>
-        <span class="desc">고교학점제로 늘어난 다과목·다성취기준을 3D로 잇고, 참고 자료를 근거로 설계합니다. (커리큘럼 위버)</span>
+        <span class="desc">고교학점제로 늘어난 다과목·다성취기준을 3D로 잇고, 참고 자료를 근거로 설계합니다.</span>
         <span class="go">바로가기 <span class="arw">→</span></span>
       </div>
     </a>
