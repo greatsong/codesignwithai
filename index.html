@@ -42,7 +42,8 @@
   .eyebrow .dot:nth-child(3){background:var(--blue)}
   h1{font-size:clamp(34px,6.2vw,60px);font-weight:800;letter-spacing:-.02em;
     line-height:1.12;text-wrap:balance}
-  h1 .star{color:var(--amber);font-weight:400;font-size:.62em;vertical-align:top;margin-left:.1em}
+  h1 .star{display:inline-block;width:.5em;height:.5em;color:var(--amber);vertical-align:.16em;margin-left:.14em}
+  h1 .star svg{width:100%;height:100%;display:block}
   .tagline{margin-top:18px;font-size:clamp(14px,2.2vw,17px);font-weight:500;color:var(--ink-soft);letter-spacing:.01em}
   .subline{margin-top:22px;display:inline-block;font-size:13.5px;font-weight:600;color:var(--ink);
     padding:8px 18px;border:1px solid var(--edge);border-radius:999px;background:var(--card)}
@@ -76,8 +77,9 @@
   .cover.초{background:linear-gradient(150deg,var(--pink),var(--pink-deep))}
   .cover.중{background:linear-gradient(150deg,var(--amber),var(--amber-deep))}
   .cover.고{background:linear-gradient(150deg,var(--blue),var(--blue-deep))}
-  .cover-star{position:absolute;top:18px;right:20px;font-size:26px;line-height:1;opacity:.9;
+  .cover-star{position:absolute;top:18px;right:20px;width:24px;height:24px;color:#fff;opacity:.92;
     transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+  .cover-star svg{width:100%;height:100%;display:block}
   .card:hover .cover-star{transform:rotate(90deg) scale(1.12)}
   /* hover 시 표지 위로 은은한 빛이 한 번 스치는 효과 */
   .cover::after{content:"";position:absolute;inset:0;pointer-events:none;
@@ -122,7 +124,7 @@
 <header>
   <div class="wrap">
     <div class="eyebrow"><span class="dot"></span><span class="dot"></span><span class="dot"></span>&nbsp;서울특별시교육청</div>
-    <h1>함께 만드는 수업,<br>서로 깊어지는 배움<span class="star">✳</span></h1>
+    <h1>함께 만드는 수업,<br>서로 깊어지는 배움<span class="star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/></svg></span></h1>
     <p class="tagline">Teacher co-agency&nbsp;·&nbsp;co-design&nbsp;·&nbsp;co-creation</p>
     <p class="subline"><span class="shine">협력적 수업 설계 레벨업 가이드북 with AI</span></p>
   </div>
@@ -135,7 +137,7 @@
     <!-- 초등학교 -->
     <a class="card" href="https://togethertr.web.app/" data-level="초">
       <div class="cover 초">
-        <span class="cover-star">✳</span>
+        <span class="cover-star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/></svg></span>
         <div class="cover-word">함께 만드는<br>수업<small>서로 깊어지는 배움</small></div>
         <div class="cover-arrows"><i>▲</i><i>▲</i></div>
         <div class="cover-en">Elementary</div>
@@ -151,7 +153,7 @@
     <!-- 중학교 -->
     <a class="card" href="https://teching-designer.vercel.app/" data-level="중">
       <div class="cover 중">
-        <span class="cover-star">✳</span>
+        <span class="cover-star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/></svg></span>
         <div class="cover-word">함께 만드는<br>수업<small>서로 깊어지는 배움</small></div>
         <div class="cover-arrows"><i>▲</i><i>▲</i></div>
         <div class="cover-en">Middle</div>
@@ -167,7 +169,7 @@
     <!-- 고등학교 · 커리큘럼 위버 (프로덕션) -->
     <a class="card" href="https://curriculum-weaver.vercel.app" data-level="고">
       <div class="cover 고">
-        <span class="cover-star">✳</span>
+        <span class="cover-star" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="12" y1="3" x2="12" y2="21"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="5.6" y1="5.6" x2="18.4" y2="18.4"/><line x1="18.4" y1="5.6" x2="5.6" y2="18.4"/></svg></span>
         <div class="cover-word">함께 만드는<br>수업<small>서로 깊어지는 배움</small></div>
         <div class="cover-arrows"><i>▲</i><i>▲</i></div>
         <div class="cover-en">High</div>
